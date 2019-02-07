@@ -34,8 +34,11 @@ code {
   top: 50px;
 }
 
-ul {
+.navigation {
   position: absolute;
-  left: 50px;
+  left: 80px;
+  top: 5px;
   list-style-type: none;
+  background-color: azure;
+
 }
