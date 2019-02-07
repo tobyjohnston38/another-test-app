@@ -27,9 +27,9 @@ class App extends Component {
           <div id="sidebar">
           <SidebarComponent sidebarOption={
             <ul class="navigation">
-            <li><a href="thing.html">thing 1</a></li>,
-            <li><a href="thing.html">thing 2</a></li>,
-            <li><a href="thing.html">thing 3</a></li>,
+            <li><a href="thing.html">thing 1</a></li>
+            <li><a href="thing.html">thing 2</a></li>
+            <li><a href="thing.html">thing 3</a></li>
             <li><a href="thing.html">thing 4</a></li>
             </ul>} />
             </div>
