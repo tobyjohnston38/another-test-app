@@ -24,16 +24,16 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header>
-        <div id="sidebar">
+          <div id="sidebar">
           <SidebarComponent sidebarOption={
             <ul class="navigation">
-              <li><a href="kitchen.html">thing 1</a></li>,
-              <li><a href="kitchen.html">thing 2</a></li>,
-              <li><a href="kitchen.html">thing 3</a></li>,
-              <li><a href="kitchen.html">thing 4</a></li>
+            <li><a href="thing.html">thing 1</a></li>,
+            <li><a href="thing.html">thing 2</a></li>,
+            <li><a href="thing.html">thing 3</a></li>,
+            <li><a href="thing.html">thing 4</a></li>
             </ul>} />
-        </div>
+            </div>
+        </header>
         <FooterComponent footerText={this.props.footerText} />
       </div>
     );
