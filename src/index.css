@@ -16,3 +16,20 @@ code {
 #button {
   color: aquamarine;
 }
+
+#button-home {
+  color: red;
+  background-color: #cc0000;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+#sidebar {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}

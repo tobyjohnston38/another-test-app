@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import FooterComponent from './FooterComponent';
-import HeaderComponent from './HeaderComponent';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import FooterComponent from "./FooterComponent";
+import HeaderComponent from "./HeaderComponent";
+import SidebarComponent from "./SidebarComponent";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <HeaderComponent paragraphText={'dgksfjbgdblfzbdfldohd'} />
+        <HeaderComponent paragraphText={"dgksfjbgdblfzbdfldohd"} />
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -23,6 +25,9 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <div id="sidebar">
+          <SidebarComponent sidebarOption={<a href="url">link text</a>} />
+        </div>
         <FooterComponent footerText={this.props.footerText} />
       </div>
     );
