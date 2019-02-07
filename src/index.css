@@ -33,3 +33,9 @@ code {
   left: 50px;
   top: 50px;
 }
+
+ul {
+  position: absolute;
+  left: 50px;
+  list-style-type: none;
+}

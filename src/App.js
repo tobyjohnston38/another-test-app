@@ -26,7 +26,13 @@ class App extends Component {
           </a>
         </header>
         <div id="sidebar">
-          <SidebarComponent sidebarOption={<a href="url">link text</a>} />
+          <SidebarComponent sidebarOption={
+            <ul class="navigation">
+              <li><a href="kitchen.html">thing 1</a></li>,
+              <li><a href="kitchen.html">thing 2</a></li>,
+              <li><a href="kitchen.html">thing 3</a></li>,
+              <li><a href="kitchen.html">thing 4</a></li>
+            </ul>} />
         </div>
         <FooterComponent footerText={this.props.footerText} />
       </div>
