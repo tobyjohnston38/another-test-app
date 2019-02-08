@@ -4,6 +4,7 @@ import "./App.css";
 import FooterComponent from "./FooterComponent";
 import HeaderComponent from "./HeaderComponent";
 import SidebarComponent from "./SidebarComponent";
+import TimeComponent from "./TimeComponent";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             Learn React
           </a>
           <div id="sidebar">
+          <TimeComponent />
           <SidebarComponent sidebarOption={
             <ul class="navigation">
             <li><a href="thing.html">thing 1</a></li>

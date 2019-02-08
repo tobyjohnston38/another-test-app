@@ -8,6 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: black;
+  font-size: 15px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,7 +23,6 @@ code {
 }
 
 #button-home {
-  color: red;
   background-color: #cc0000;
   border-radius: 50%;
   height: 50px;
@@ -36,9 +40,8 @@ code {
 
 .navigation {
   position: absolute;
-  left: 80px;
+  left: 70px;
   top: 5px;
   list-style-type: none;
   background-color: azure;
-
 }
