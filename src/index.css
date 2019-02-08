@@ -45,3 +45,9 @@ code {
   list-style-type: none;
   background-color: azure;
 }
+
+.Time {
+  position: absolute;
+  top: 40px;
+  right: 100px;
+}
