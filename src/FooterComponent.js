@@ -3,11 +3,17 @@ import { buttonComponent as ButtonComponent } from "./buttonComponent"
 
 class FooterComponent extends Component {
   state = {
-    timeOfDay: undefined
+    timeOfDay: undefined,
+    buttonText: "Click me!",
+    textValue: ""
   }
 
-  handleButtonClick(event) {
-    alert("this button was clicked!")
+  handleText = e => {
+    this.setState({ value: e.target.value })
+  }
+
+  handleButtonClick(text) {
+    alert(text)
   }
 
   // counter = 1
@@ -21,20 +27,31 @@ class FooterComponent extends Component {
     return (
       <>
         <p>{`${this.props.footerText} ${this.state.timeOfDay}`}</p>
+
+        <input type="text" text={this.state.value} onChange={this.handleText} />
+
         <ButtonComponent
-          onClick={this.handleButtonClick}
-          buttonText={"Click me!"}
+          onClick={this.handleButtonClick.bind(
+            this,
+            "this button was clicked!"
+          )}
+          buttonText={this.state.buttonText}
         />
       </>
     )
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      var currentHour = new Date().getHours()
-      var timeOfDay = currentHour >= 12 ? "afternoon!" : "morning!"
-      this.setState({ timeOfDay })
-    }, 3000)
+    // setTimeout(() => {
+    //   var currentHour = new Date().getHours()
+    //   var timeOfDay = currentHour >= 12 ? "afternoon!" : "morning!"
+    //   this.setState({ timeOfDay })
+    // }, 3000)
+    console.log("i'm in componentDidMount")
+  }
+
+  componentDidUpdate() {
+    console.log("i'm in componentDidUpdate")
   }
 }
 
