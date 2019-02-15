@@ -1,6 +1,7 @@
 import React from "react"
 import SidebarComponent from "./SidebarComponent"
 import TimeComponent from "./TimeComponent"
+import MadeUpComponent from "./MadeUpComponent"
 
 //FUNCTIONAL COMPONENT
 
@@ -18,6 +19,7 @@ const ContentComponent = props => {
         rel="noopener noreferrer">
         Learn React
       </a>
+
       <div className="Time">
         <TimeComponent />
       </div>
@@ -43,6 +45,7 @@ const ContentComponent = props => {
           }
         />
       </div>
+      <MadeUpComponent />
     </header>
   )
 }

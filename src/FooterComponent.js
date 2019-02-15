@@ -5,15 +5,22 @@ class FooterComponent extends Component {
   state = {
     timeOfDay: undefined,
     buttonText: "Click me!",
-    textValue: ""
+    textValue: "",
+    radioChecked: false
   }
 
   handleText = e => {
-    this.setState({ value: e.target.value })
+    this.setState({ textValue: e.target.value }, () =>
+      console.table(this.state)
+    )
   }
 
   handleButtonClick(text) {
     alert(text)
+  }
+
+  handleRadioChecked(event) {
+    alert("asdfgh")
   }
 
   // counter = 1
@@ -28,7 +35,17 @@ class FooterComponent extends Component {
       <>
         <p>{`${this.props.footerText} ${this.state.timeOfDay}`}</p>
 
-        <input type="text" text={this.state.value} onChange={this.handleText} />
+        <input
+          type="text"
+          text={this.state.textValue}
+          onChange={this.handleText}
+        />
+
+        <input
+          type="radio"
+          value="myRadioBox"
+          onChange={this.handleRadioChecked}
+        />
 
         <ButtonComponent
           onClick={this.handleButtonClick.bind(
