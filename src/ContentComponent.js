@@ -1,7 +1,7 @@
-import React from "react"
-import SidebarComponent from "./SidebarComponent"
-import TimeComponent from "./TimeComponent"
-import MadeUpComponent from "./MadeUpComponent"
+import React from "react";
+import SidebarComponent from "./SidebarComponent";
+import TimeComponent from "./TimeComponent";
+// import MadeUpComponent from "./MadeUpComponent";
 
 //FUNCTIONAL COMPONENT
 
@@ -16,7 +16,8 @@ const ContentComponent = props => {
         className="App-link"
         href="https://reactjs.org"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         Learn React
       </a>
 
@@ -45,9 +46,8 @@ const ContentComponent = props => {
           }
         />
       </div>
-      <MadeUpComponent />
     </header>
-  )
-}
+  );
+};
 
-export default ContentComponent
+export default ContentComponent;
