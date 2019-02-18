@@ -58,3 +58,9 @@ code {
   right: 100px;
   transform: scale(3);
 }
+
+.listBox {
+  position: absolute;
+  top: 150px;
+  right: 200px;
+}

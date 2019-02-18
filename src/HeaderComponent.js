@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class HeaderComponent extends Component {
   state = {
     showParagraph: undefined,
-    checkChecked: false
+    checkChecked: false,
+    textBoxText: ""
   };
 
   handleClick = () => {
@@ -14,9 +15,24 @@ class HeaderComponent extends Component {
     alert("Check this out!");
   }
 
+  handleTextBox = e => {
+    this.setState({
+      textBoxText: e.target.value
+    });
+  };
+
   render() {
     return (
       <>
+        <div className="listBox">
+          <input
+            type="textbox"
+            name="textbox"
+            placeholder="Write Something Here!"
+            onChange={this.handleTextBox}
+          />
+          <h1>{`${this.state.textBoxText}`}</h1>
+        </div>
         <div className="checkThis">
           <input type="checkbox" onChange={this.handleCheckChecked} />
         </div>
