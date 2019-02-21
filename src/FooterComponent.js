@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { buttonComponent as ButtonComponent } from "./buttonComponent"
+import { radiobuttonChecked } from "./action"
+import { connect } from "react-redux"
 
 class FooterComponent extends Component {
   state = {
@@ -44,7 +46,8 @@ class FooterComponent extends Component {
         <input
           type="radio"
           value="myRadioBox"
-          onChange={this.handleRadioChecked}
+          onChange={event => this.props.radiobuttonChecked()}
+          checked={this.props.checked}
         />
 
         <ButtonComponent
@@ -72,4 +75,20 @@ class FooterComponent extends Component {
   }
 }
 
-export default FooterComponent
+const radioDispatchToProps = dispatch => {
+  return {
+    radiobuttonChecked: () => dispatch(radiobuttonChecked())
+  }
+}
+
+const mapRadioStateToProps = state => {
+  console.log(`got state for radiobutton ${state.checked}`)
+  return {
+    checked: state.checked
+  }
+}
+
+export default connect(
+  mapRadioStateToProps,
+  radioDispatchToProps
+)(FooterComponent)
