@@ -5,9 +5,10 @@ import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import { createStore } from "redux"
 import { Provider } from "react-redux"
-import rootReducer from "./reducer"
+import rootReducer, { initialState } from "./reducer"
+import { composeWithDevTools } from "redux-devtools-extension"
 
-const appState = createStore(rootReducer)
+const appState = createStore(rootReducer, initialState, composeWithDevTools())
 
 const jsx = (
   <Provider store={appState}>

@@ -14,7 +14,7 @@ class HeaderComponent extends Component {
   }
 
   handleCheckChecked(event, action) {
-    // alert("Check this out!")
+    alert("Check this out!")
     action()
   }
 
@@ -39,9 +39,7 @@ class HeaderComponent extends Component {
         <div className="checkThis">
           <input
             type="checkbox"
-            onChange={event =>
-              this.handleCheckChecked(event, this.props.onCheckboxChecked)
-            }
+            onChange={event => this.props.checkboxChecked()}
             checked={this.props.checked}
           />
         </div>
@@ -54,9 +52,9 @@ class HeaderComponent extends Component {
   }
 }
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = dispatch => {
   return {
-    onCheckboxChecked: () => checkboxChecked()
+    checkboxChecked: () => dispatch(checkboxChecked())
   }
 }
 
