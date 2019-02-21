@@ -62,11 +62,11 @@ class FooterComponent extends Component {
   }
 
   componentDidMount() {
-    // setTimeout(() => {
-    //   var currentHour = new Date().getHours()
-    //   var timeOfDay = currentHour >= 12 ? "afternoon!" : "morning!"
-    //   this.setState({ timeOfDay })
-    // }, 3000)
+    setTimeout(() => {
+      var currentHour = new Date().getHours()
+      var timeOfDay = currentHour >= 12 ? "afternoon!" : "morning!"
+      this.setState({ timeOfDay })
+    }, 3000)
     console.log("i'm in componentDidMount")
   }
 
