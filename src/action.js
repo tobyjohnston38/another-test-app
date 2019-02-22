@@ -12,3 +12,8 @@ export const footerTextboxText = footerTextBoxText => ({
   type: "FOOTER_TEXTBOX_TEXT",
   payload: footerTextBoxText
 })
+
+export const headerTextboxText = headerTextboxText => ({
+  type: "HEADER_TEXTBOX_TEXT",
+  payload: headerTextboxText
+})
