@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { checkboxChecked } from "./action"
+import { checkboxChecked, headerTextboxText } from "./action"
 import { connect } from "react-redux"
 
 class HeaderComponent extends Component {
@@ -54,13 +54,16 @@ class HeaderComponent extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    checkboxChecked: () => dispatch(checkboxChecked())
+    checkboxChecked: () => dispatch(checkboxChecked()),
+    handleHeaderTextInput: event =>
+      dispatch(headerTextboxText(event.target.value))
   }
 }
 
 const mapStateToProps = state => {
   return {
-    checked: state.checkboxChecked
+    checked: state.checkboxChecked,
+    textBoxText: state.textBoxText
   }
 }
 
