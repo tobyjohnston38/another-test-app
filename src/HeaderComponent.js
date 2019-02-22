@@ -30,7 +30,7 @@ class HeaderComponent extends Component {
         <div className="listBox">
           <input
             type="textbox"
-            name="textbox"
+            name="headerTextbox"
             placeholder="Write Something Here!"
             onChange={this.handleTextBox}
           />
