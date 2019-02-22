@@ -7,7 +7,7 @@ class FooterComponent extends Component {
   state = {
     timeOfDay: undefined,
     buttonText: "Click me!",
-    textValue: "",
+    textboxValue: "",
     radioChecked: false
   }
 
@@ -29,12 +29,14 @@ class FooterComponent extends Component {
   render() {
     return (
       <>
+        <p>{`${this.props.textboxValue}`}</p>
         <p>{`${this.props.footerText} ${this.state.timeOfDay}`}</p>
 
         <input
           type="textbox"
           name="footerTextBox"
           value={this.props.textboxValue}
+          placeholder="I am the footer textbox"
           onChange={this.props.handleInput}
         />
 
