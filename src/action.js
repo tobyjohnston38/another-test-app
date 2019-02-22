@@ -8,7 +8,7 @@ export const radiobuttonChecked = () => ({
   payload: "lalalalala"
 })
 
-export const footerTextboxText = textBoxText => ({
-  type: "TEXTBOX_TEXT",
-  payload: textBoxText
+export const footerTextboxText = footerTextBoxText => ({
+  type: "FOOTER_TEXTBOX_TEXT",
+  payload: footerTextBoxText
 })

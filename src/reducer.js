@@ -19,8 +19,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         radiobuttonChecked: !state.radiobuttonChecked
       }
-    case "TEXTBOX_TEXT":
-      console.log("executing the TEXTBOX_TEXT reducer")
+    case "FOOTER_TEXTBOX_TEXT":
+      console.log("executing the FOOTER_TEXTBOX_TEXT reducer")
       return {
         ...state,
         textboxValue: action.payload
