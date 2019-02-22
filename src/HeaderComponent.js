@@ -59,9 +59,8 @@ const mapDispatchToProps = dispatch => {
 }
 
 const mapStateToProps = state => {
-  console.log(`received the checked state ${state.checked}`)
   return {
-    checked: state.checked
+    checked: state.checkboxChecked
   }
 }
 

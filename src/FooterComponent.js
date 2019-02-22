@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { buttonComponent as ButtonComponent } from "./buttonComponent"
-import { radiobuttonChecked } from "./action"
+import { radiobuttonChecked, footerTextboxText } from "./action"
 import { connect } from "react-redux"
 
 class FooterComponent extends Component {
@@ -9,12 +9,6 @@ class FooterComponent extends Component {
     buttonText: "Click me!",
     textValue: "",
     radioChecked: false
-  }
-
-  handleText = e => {
-    this.setState({ textValue: e.target.value }, () =>
-      console.table(this.state)
-    )
   }
 
   handleButtonClick(text) {
@@ -38,15 +32,16 @@ class FooterComponent extends Component {
         <p>{`${this.props.footerText} ${this.state.timeOfDay}`}</p>
 
         <input
-          type="text"
-          text={this.state.textValue}
-          onChange={this.handleText}
+          type="textbox"
+          name="footerTextBox"
+          value={this.props.textboxValue}
+          onChange={this.props.handleInput}
         />
 
         <input
           type="radio"
           value="myRadioBox"
-          onChange={event => this.props.radiobuttonChecked()}
+          onChange={this.props.radiobuttonChecked}
           checked={this.props.checked}
         />
 
@@ -75,20 +70,21 @@ class FooterComponent extends Component {
   }
 }
 
-const radioDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
-    radiobuttonChecked: () => dispatch(radiobuttonChecked())
+    radiobuttonChecked: () => dispatch(radiobuttonChecked()),
+    handleInput: event => dispatch(footerTextboxText(event.target.value))
   }
 }
 
-const mapRadioStateToProps = state => {
-  console.log(`got state for radiobutton ${state.checked}`)
+const mapStateToProps = state => {
   return {
-    checked: state.checked
+    checked: state.radiobuttonChecked,
+    textboxValue: state.textboxValue
   }
 }
 
 export default connect(
-  mapRadioStateToProps,
-  radioDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(FooterComponent)

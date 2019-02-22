@@ -1,6 +1,8 @@
 export const initialState = {
   comment: "I am logging from the reducer",
-  checked: false
+  checkboxChecked: false,
+  radiobuttonChecked: false,
+  textboxValue: ""
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -8,12 +10,20 @@ const rootReducer = (state = initialState, action) => {
     case "CHECKBOX_CHECKED":
       console.log("executing the CHECKBOX_CHECKED reducer")
       return {
-        checked: !state.checked
+        ...state,
+        checkboxChecked: !state.checkboxChecked
       }
     case "RADIOBUTTON_CHECKED":
       console.log("executing the RADIOBUTTON_CHECKED reducer")
       return {
-        checked: !state.checked
+        ...state,
+        radiobuttonChecked: !state.radiobuttonChecked
+      }
+    case "TEXTBOX_TEXT":
+      console.log("executing the TEXTBOX_TEXT reducer")
+      return {
+        ...state,
+        textboxValue: action.payload
       }
     default:
       return state
