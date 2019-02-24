@@ -7,7 +7,7 @@ class FooterComponent extends Component {
   state = {
     timeOfDay: undefined,
     buttonText: "Click me!",
-    textboxValue: "",
+    footerTextboxValue: "",
     radioChecked: false
   }
 
@@ -29,13 +29,13 @@ class FooterComponent extends Component {
   render() {
     return (
       <>
-        <p>{`${this.props.textboxValue}`}</p>
+        <p>{`${this.props.footerTextboxValue}`}</p>
         <p>{`${this.props.footerText} ${this.state.timeOfDay}`}</p>
 
         <input
           type="textbox"
           name="footerTextBox"
-          value={this.props.textboxValue}
+          value={this.props.footerTextboxValue}
           placeholder="I am the footer textbox"
           onChange={this.props.handleInput}
         />
@@ -82,7 +82,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     checked: state.radiobuttonChecked,
-    textboxValue: state.textboxValue
+    footerTextboxValue: state.footerTextboxValue
   }
 }
 

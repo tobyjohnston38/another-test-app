@@ -2,7 +2,7 @@ export const initialState = {
   comment: "I am logging from the reducer",
   checkboxChecked: false,
   radiobuttonChecked: false,
-  textboxValue: "",
+  footerTextboxValue: "",
   headerTextboxValue: ""
 }
 
@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
       console.log("executing the FOOTER_TEXTBOX_TEXT reducer")
       return {
         ...state,
-        textboxValue: action.payload
+        footerTextboxValue: action.payload
       }
     case "HEADER_TEXTBOX_TEXT":
       console.log("executing the HEADER_TEXTBOX_TEXT reducer")
