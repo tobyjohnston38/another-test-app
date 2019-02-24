@@ -6,7 +6,7 @@ class HeaderComponent extends Component {
   state = {
     showParagraph: undefined,
     checkChecked: false,
-    HeaderTextBoxValue: ""
+    headerTextboxValue: ""
   };
 
   handleClick = () => {
@@ -25,11 +25,11 @@ class HeaderComponent extends Component {
           <input
             type="textbox"
             name="headerTextbox"
+            value={this.props.headerTextboxValue}
             placeholder="Write Something Here!"
             onChange={this.props.handleTextBox}
           />
-          textBoxText
-          <h1>{`${this.state.headerTextBoxValue}`}</h1>
+          <h1>{`${this.props.headerTextboxValue}`}</h1>
         </div>
         <div className="checkThis">
           <input
@@ -57,7 +57,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     checked: state.checkboxChecked,
-    headerTextboxValue: state.headerTextBoxValue
+    headerTextboxValue: state.headerTextboxValue
   };
 };
 
