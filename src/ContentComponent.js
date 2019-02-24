@@ -1,6 +1,6 @@
-import React from "react";
-import SidebarComponent from "./SidebarComponent";
-import TimeComponent from "./TimeComponent";
+import React from "react"
+import SidebarComponent from "./SidebarComponent"
+import TimeComponent from "./TimeComponent"
 
 const ContentComponent = props => {
   return (
@@ -10,8 +10,7 @@ const ContentComponent = props => {
         className="App-link"
         href="https://reactjs.org"
         target="_blank"
-        rel="noopener noreferrer"
-      >
+        rel="noopener noreferrer">
         Learn React
       </a>
       <p>
@@ -43,7 +42,7 @@ const ContentComponent = props => {
         />
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default ContentComponent;
+export default ContentComponent
