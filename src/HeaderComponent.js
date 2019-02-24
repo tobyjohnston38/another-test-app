@@ -1,27 +1,21 @@
-import React, { Component } from "react"
-import { checkboxChecked, headerTextboxText } from "./action"
-import { connect } from "react-redux"
+import React, { Component } from "react";
+import { checkboxChecked, headerTextboxText } from "./action";
+import { connect } from "react-redux";
 
 class HeaderComponent extends Component {
   state = {
     showParagraph: undefined,
     checkChecked: false,
-    textBoxText: ""
-  }
+    HeaderTextBoxValue: ""
+  };
 
   handleClick = () => {
-    this.setState({ showParagraph: !this.state.showParagraph })
-  }
+    this.setState({ showParagraph: !this.state.showParagraph });
+  };
 
   handleCheckChecked(event, action) {
-    alert("Check this out!")
-    action()
-  }
-
-  handleTextBox = e => {
-    this.setState({
-      textBoxText: e.target.value
-    })
+    alert("Check this out!");
+    action();
   }
 
   render() {
@@ -32,9 +26,10 @@ class HeaderComponent extends Component {
             type="textbox"
             name="headerTextbox"
             placeholder="Write Something Here!"
-            onChange={this.handleTextBox}
+            onChange={this.props.handleTextBox}
           />
-          <h1>{`${this.state.textBoxText}`}</h1>
+          textBoxText
+          <h1>{`${this.state.headerTextBoxValue}`}</h1>
         </div>
         <div className="checkThis">
           <input
@@ -48,26 +43,25 @@ class HeaderComponent extends Component {
         </button>
         {this.state.showParagraph ? <p>{this.props.paragraphText}</p> : null}
       </>
-    )
+    );
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     checkboxChecked: () => dispatch(checkboxChecked()),
-    handleHeaderTextInput: event =>
-      dispatch(headerTextboxText(event.target.value))
-  }
-}
+    handleTextBox: event => dispatch(headerTextboxText(event.target.value))
+  };
+};
 
 const mapStateToProps = state => {
   return {
     checked: state.checkboxChecked,
-    textBoxText: state.textBoxText
-  }
-}
+    headerTextboxValue: state.headerTextBoxValue
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HeaderComponent)
+)(HeaderComponent);
