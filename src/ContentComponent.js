@@ -1,17 +1,11 @@
 import React from "react";
 import SidebarComponent from "./SidebarComponent";
 import TimeComponent from "./TimeComponent";
-// import MadeUpComponent from "./MadeUpComponent";
-
-//FUNCTIONAL COMPONENT
 
 const ContentComponent = props => {
   return (
     <header className="App-header">
       <img src={props.applicationLogo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload geraoiufv.
-      </p>
       <a
         className="App-link"
         href="https://reactjs.org"
@@ -20,7 +14,9 @@ const ContentComponent = props => {
       >
         Learn React
       </a>
-
+      <p>
+        Edit <code>src/App.js</code> and save to reload geraoiufv.
+      </p>
       <div className="Time">
         <TimeComponent />
       </div>
