@@ -1,21 +1,22 @@
-import React, { Component } from "react";
-import { checkboxChecked, headerTextboxText } from "./action";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import { checkboxChecked, headerTextboxText } from "./action"
+import { connect } from "react-redux"
 
 class HeaderComponent extends Component {
   state = {
     showParagraph: undefined,
     checkChecked: false,
+    headerButtonHit: false,
     headerTextboxValue: ""
-  };
+  }
 
   handleClick = () => {
-    this.setState({ showParagraph: !this.state.showParagraph });
-  };
+    this.setState({ showParagraph: !this.state.showParagraph })
+  }
 
   handleCheckChecked(event, action) {
-    alert("Check this out!");
-    action();
+    alert("Check this out!")
+    action()
   }
 
   render() {
@@ -29,6 +30,9 @@ class HeaderComponent extends Component {
             placeholder="Write Something Here!"
             onChange={this.props.handleTextBox}
           />
+          <button id={"headerInputButton"} type="button">
+            Submit
+          </button>
           <h1>{`${this.props.headerTextboxValue}`}</h1>
         </div>
         <div className="checkThis">
@@ -38,12 +42,12 @@ class HeaderComponent extends Component {
             checked={this.props.checked}
           />
         </div>
-        <button id={"button"} onClick={this.handleClick}>
+        <button id={"headerButton"} type="button" onClick={this.handleClick}>
           Click Me!
         </button>
         {this.state.showParagraph ? <p>{this.props.paragraphText}</p> : null}
       </>
-    );
+    )
   }
 }
 
@@ -51,17 +55,17 @@ const mapDispatchToProps = dispatch => {
   return {
     checkboxChecked: () => dispatch(checkboxChecked()),
     handleTextBox: event => dispatch(headerTextboxText(event.target.value))
-  };
-};
+  }
+}
 
 const mapStateToProps = state => {
   return {
     checked: state.checkboxChecked,
     headerTextboxValue: state.headerTextboxValue
-  };
-};
+  }
+}
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HeaderComponent);
+)(HeaderComponent)

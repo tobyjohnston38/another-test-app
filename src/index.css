@@ -22,8 +22,15 @@ code {
     monospace;
 }
 
-#button {
+#headerButton {
   color: aquamarine;
+}
+
+#headerInputButton {
+  transform: scale(1);
+  top: 30px;
+  right: 40px;
+  position: absolute;
 }
 
 #button-home {
@@ -66,5 +73,6 @@ code {
 .listBox {
   position: absolute;
   top: 150px;
-  right: 200px;
+  right: 500px;
+  transform: scale(2);
 }
