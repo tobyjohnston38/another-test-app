@@ -24,6 +24,10 @@ class HeaderComponent extends Component {
     action()
   }
 
+  // handleText = () => {
+  //   this.setState({  })
+  // }
+
   render() {
     return (
       <>
@@ -37,7 +41,7 @@ class HeaderComponent extends Component {
           />
           <input
             type="textbox"
-            name="otherTextbox"
+            name="otherHeaderTextbox"
             value={this.props.headerTextboxValueTwo}
             placeholder="Box Two"
             onChange={this.props.handleHeaderInputTwo}
@@ -45,6 +49,9 @@ class HeaderComponent extends Component {
           <button id={"headerInputButton"} type="button">
             Submit
           </button>
+          <h1>{`${this.props.headerTextboxValue} ${
+            this.props.headerTextboxValueTwo
+          }`}</h1>
         </div>
         <div className="checkThis">
           <input
