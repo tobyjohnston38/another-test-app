@@ -6,16 +6,6 @@ const ContentComponent = props => {
   return (
     <header className="App-header">
       <img src={props.applicationLogo} className="App-logo" alt="logo" />
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer">
-        Learn React
-      </a>
-      <p>
-        Edit <code>src/App.js</code> and save to reload geraoiufv.
-      </p>
       <div className="Time">
         <TimeComponent />
       </div>
