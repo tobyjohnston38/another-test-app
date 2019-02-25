@@ -17,3 +17,7 @@ export const headerTextboxText = headerTextboxText => ({
   type: "HEADER_TEXTBOX_TEXT",
   payload: headerTextboxText
 })
+export const headerTextboxTextTwo = headerTextboxTextTwo => ({
+  type: "HEADER_TEXTBOX_TEXT_TWO",
+  payload: headerTextboxTextTwo
+})

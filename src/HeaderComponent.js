@@ -1,5 +1,9 @@
 import React, { Component } from "react"
-import { checkboxChecked, headerTextboxText } from "./action"
+import {
+  checkboxChecked,
+  headerTextboxText,
+  headerTextboxTextTwo
+} from "./action"
 import { connect } from "react-redux"
 
 class HeaderComponent extends Component {
@@ -7,7 +11,8 @@ class HeaderComponent extends Component {
     showParagraph: undefined,
     checkChecked: false,
     headerButtonHit: false,
-    headerTextboxValue: ""
+    headerTextboxValue: "",
+    headerTextboxValueTwo: ""
   }
 
   handleClick = () => {
@@ -27,13 +32,19 @@ class HeaderComponent extends Component {
             type="textbox"
             name="headerTextbox"
             value={this.props.headerTextboxValue}
-            placeholder="Write Something Here!"
-            onChange={this.props.handleTextBox}
+            placeholder="Box One"
+            onChange={this.props.handleHeaderInput}
+          />
+          <input
+            type="textbox"
+            name="otherTextbox"
+            value={this.props.headerTextboxValueTwo}
+            placeholder="Box Two"
+            onChange={this.props.handleHeaderInputTwo}
           />
           <button id={"headerInputButton"} type="button">
             Submit
           </button>
-          <h1>{`${this.props.headerTextboxValue}`}</h1>
         </div>
         <div className="checkThis">
           <input
@@ -54,14 +65,17 @@ class HeaderComponent extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     checkboxChecked: () => dispatch(checkboxChecked()),
-    handleTextBox: event => dispatch(headerTextboxText(event.target.value))
+    handleHeaderInput: event => dispatch(headerTextboxText(event.target.value)),
+    handleHeaderInputTwo: event =>
+      dispatch(headerTextboxTextTwo(event.target.value))
   }
 }
 
 const mapStateToProps = state => {
   return {
     checked: state.checkboxChecked,
-    headerTextboxValue: state.headerTextboxValue
+    headerTextboxValue: state.headerTextboxValue,
+    headerTextboxValueTwo: state.headerTextboxValueTwo
   }
 }
 

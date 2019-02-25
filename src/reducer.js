@@ -2,6 +2,7 @@ export const initialState = {
   comment: "I am logging from the reducer",
   checkboxChecked: false,
   radiobuttonChecked: false,
+  headerButtonHit: false,
   footerTextboxValue: "",
   headerTextboxValue: ""
 }
@@ -20,6 +21,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         radiobuttonChecked: !state.radiobuttonChecked
       }
+    case "HEADER_BUTTON_HIT":
+      console.log("executing the HEADER_BUTTON_HIT reducer")
+      return {
+        ...state,
+        headerButtonHit: !state.headerButtonHit
+      }
     case "FOOTER_TEXTBOX_TEXT":
       console.log("executing the FOOTER_TEXTBOX_TEXT reducer")
       return {
@@ -31,6 +38,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         headerTextboxValue: action.payload
+      }
+    case "HEADER_TEXTBOX_TEXT_TWO":
+      console.log("executing the HEADER_TEXTBOX_TEXT_TWO reducer")
+      return {
+        ...state,
+        headerTextboxValueTwo: action.payload
       }
     default:
       return state
